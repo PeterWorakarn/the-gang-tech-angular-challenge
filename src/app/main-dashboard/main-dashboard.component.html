@@ -1,0 +1,39 @@
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 z-20">
+  <ng-container *ngFor="let platform of platformData">
+    <div
+      class="bg-light-card-bg dark:bg-dark-card-bg dark:hover:bg-dark-hover hover:bg-light-hover hover:cursor-pointer relative w-full col-span-1 px-4 pt-10 rounded-lg z-20 
+    ">
+      <div class="absolute top-0 left-0 w-full h-4 rounded-t-lg
+    {{platform.platform === PLATFORM.FACEBOOK && 'bg-primary-facebook'}}
+    {{platform.platform === PLATFORM.TWITTER && 'bg-primary-twitter'}}
+    {{platform.platform === PLATFORM.YOUTUBE && 'bg-primary-youtube'}}
+    {{platform.platform === PLATFORM.INSTAGRAM && 'bg-gradient-to-r from-[hsl(37,97%,70%)] to-[hsl(329,70%,58%)]'}}
+    "></div>
+      <div class="flex items-center justify-center gap-1">
+        <img src="/assets/{{platform.img}}" alt="image">
+        <p class="text-sm text-light-support-text dark:text-dark-support-text font-semibold">{{platform.account}}</p>
+      </div>
+      <p class="text-black dark:text-white text-5xl font-semibold mt-5 w-full text-center">{{platform.followers |
+        shortNumber}}</p>
+      <p class="text-sm tracking-widest font-medium text-light-support-text text-center">FOLLOWERS</p>
+      <div class="my-5 w-full flex items-center justify-center">
+        <ng-container *ngIf="platform.status === STATUS.INCREASE">
+          <div class="text-primary-green flex items-center justify-center gap-1 font-semibold">
+            <img src="/assets/icon-up.svg" alt="increase" />
+            <p>{{platform.status_value}}</p>
+            <p>Today</p>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="platform.status === STATUS.DECREASE">
+          <div class="text-primary-red flex items-center justify-center gap-1 font-semibold">
+            <img src="/assets/icon-down.svg" alt="decrease" />
+            <p>{{platform.status_value}}</p>
+            <p>Today</p>
+          </div>
+        </ng-container>
+      </div>
+
+      <!-- {{platform.platform === PLATFORM.FACEBOOK ? 'pp' : 'xx'}} -->
+    </div>
+  </ng-container>
+</div>

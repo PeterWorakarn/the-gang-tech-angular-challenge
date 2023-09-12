@@ -1,0 +1,9 @@
+<div class="flex sm:flex-row w-full flex-col justify-between lg:items-center w-full">
+  <div class="border-b border-b-light-support-text sm:pb-0 pb-5 sm:border-none z-50">
+    <h1 class="font-semibold text-2xl lg:text-3xl text-black dark:text-white">{{dashboardHeaderData['title']}}</h1>
+    <p class="text-light-support-text dark:text-dark-support-text font-semibold">Total Followers: {{dashboardHeaderData['total-followers']
+      |
+      number}}</p>
+  </div>
+  <app-light-dark-toggle></app-light-dark-toggle>
+</div>

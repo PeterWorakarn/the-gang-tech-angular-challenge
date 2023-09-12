@@ -1,0 +1,20 @@
+<div class="my-5 flex items-center justify-between lg:justify-end gap-5">
+  <p class="text-light-support-text dark:text-dark-support-text font-semibold">Dark Mode</p>
+  <div for="toggle-prefer-color-scheme relative flex items-center w-20 align-middle select-none">
+    <input
+      type="checkbox"
+      id="toggle-prefer-color-scheme"
+      name="toggle-prefer-color-scheme"
+      [checked]="isEnableDarkMode"
+      (change)="colorPreferSchemeHandler()"
+      class="absolute block w-5 h-5 rounded-full
+      appearance-none cursor-pointer toggle-checkbox 
+      {{isEnableDarkMode ? 'bg-dark-toggle translate-x-0.5' : 'bg-white translate-x-[25px]'}}
+      my-0.5" />
+    <label
+      for="toggle-prefer-color-scheme"
+      class="block overflow-hidden h-[24px] w-12 rounded-full cursor-pointer
+      hover:bg-gradient-to-r hover:from-[#4E98D5] hover:to-[#3EC4A1]
+      {{isEnableDarkMode ? 'bg-gradient-to-r from-[#4E98D5] to-[#3EC4A1]' : 'bg-gray-400'}}"></label>
+  </div>
+</div>

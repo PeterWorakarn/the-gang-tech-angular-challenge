@@ -1,0 +1,35 @@
+<h2 class="text-light-support-text dark:text-white text-xl font-semibold mb-2">Overview - Today</h2>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+  <ng-container *ngFor="let data of platFormDataDetail">
+    <div
+      class="bg-light-card-bg dark:bg-dark-card-bg hover:bg-light-hover dark:hover:bg-dark-hover hover:cursor-pointer relative w-full col-span-1 p-4 rounded-lg">
+      <div class="flex items-center justify-between">
+        <p class="text-light-support-text dark:text-dark-support-text text-sm font-semibold">
+          <ng-container *ngIf="data.type === TYPE.PAGE_VIEWS">Page Views</ng-container>
+          <ng-container *ngIf="data.type === TYPE.PROFILE_VIEWS">Profile Views</ng-container>
+          <ng-container *ngIf="data.type === TYPE.TOTAL_VIEWS">Total Views</ng-container>
+          <ng-container *ngIf="data.type === TYPE.RETWEETS">Retweets</ng-container>
+          <ng-container *ngIf="data.type === TYPE.LIKES">Likes</ng-container>
+        </p>
+        <img src="/assets/{{data.img}}" alt="image">
+      </div>
+
+      <div class="flex items-end justify-between mt-5">
+        <p class="text-3xl font-semibold text-black dark:text-white">{{data.value | shortNumber}}</p>
+        <ng-container *ngIf="data.status === STATUS.INCREASE">
+          <div class="text-primary-green flex items-center justify-center gap-1 font-semibold">
+            <img src="/assets/icon-up.svg" alt="increase" />
+            <p class="text-xs">{{data.status_value_percent}} %</p>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="data.status === STATUS.DECREASE">
+          <div class="text-primary-red flex items-center justify-center gap-1 font-semibold">
+            <img src="/assets/icon-down.svg" alt="decrease" />
+            <p class="text-xs">{{data.status_value_percent}} %</p>
+          </div>
+        </ng-container>
+      </div>
+
+    </div>
+  </ng-container>
+</div>
