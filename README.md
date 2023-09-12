@@ -1,5 +1,5 @@
 # The Gang Technology - Social Media Dashboard
-
+![Banner](https://raw.githubusercontent.com/PeterWorakarn/the-gang-tech-angular-challenge/master/screenshot.png)
 Tech Stack: Angular, Tailwind CSS
 
 ## Feature
